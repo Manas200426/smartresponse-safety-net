@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                emergency: {
+                    red: '#ea384c',
+                    blue: '#1EAEDB',
+                    darkGray: '#222222',
+                    midGray: '#333333',
+                    lightGray: '#555555'
+                },
+                priority: {
+                    critical: '#FF3A41',
+                    high: '#FF8C42',
+                    medium: '#FFC857',
+                    low: '#4F8FCA'
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +98,29 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'pulse-emergency': {
+                    '0%, 100%': {
+                        opacity: '1'
+                    },
+                    '50%': {
+                        opacity: '0.5'
+                    }
+                },
+                'countdown': {
+                    '0%': {
+                        transform: 'scaleX(1)'
+                    },
+                    '100%': {
+                        transform: 'scaleX(0)'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'pulse-emergency': 'pulse-emergency 2s ease-in-out infinite',
+                'countdown': 'countdown 30s linear forwards'
 			}
 		}
 	},
